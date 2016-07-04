@@ -180,7 +180,7 @@ Revert is a way to move the tip of a branch to a different commit. This can be u
 2. `--mixed` – The staged snapshot is updated to match the specified commit, but the working directory is not affected. This is the default option.
 3. `--hard` – The staged snapshot and the working directory are both updated to match the specified commit.
 
-![Screenshot](art/git_reset_scope.svg)
+![Screenshot](art/git_reset_scope.png)
 
 ```
 $ git reset --hard
