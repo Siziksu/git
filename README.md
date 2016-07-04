@@ -172,23 +172,21 @@ $ git commit -m "first commit"
 
 ## Revert changes
 
-Revert changes made to your working copy.
+#### Reset
+
+Revert is a way to move the tip of a branch to a different commit. This can be used to remove commits from the current branch. It can have the following flags.
+
+1. `--soft` – The staged snapshot and working directory are not altered in any way.
+2. `--mixed` – The staged snapshot is updated to match the specified commit, but the working directory is not affected. This is the default option.
+3. `--hard` – The staged snapshot and the working directory are both updated to match the specified commit.
+
+![Screenshot](git_reset_scope.svg)
 
 ```
-$ git checkout .
+$ git reset --hard
 ```
 
-Revert changes made to the index (i.e., that you have added). Warning this will reset all the unpushed commits to master.
-
-```
-$ git reset
-```
-
-Revert a change that have been committed.
-
-```
-$ git revert ...
-```
+#### Clean
 
 Remove untracked files (e.g., new files, generated files).
 
