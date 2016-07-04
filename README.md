@@ -4,6 +4,10 @@ GIT quick reference.
 
 ## Configuration
 
+#### Console abort command
+
+To abort a command use `CTRL + C`.
+
 #### Core editor
 
 Install `Notepadd++` and set the core editor.
@@ -54,10 +58,6 @@ To use this tool.
 $ git difftool
 ```
 
-#### Abort Command
-
-To abort a command use `CTRL + C`.
-
 #### Global user details
 
 Display the global user name and email.
@@ -90,35 +90,87 @@ $ git config user.name "User Name"
 $ git config user.email "user@email.com"
 ```
 
-## Commands
-
-Display the config file.
+#### Display the config file
 
 ```
 $ git config --list
+```
 
-or
+```
+$ git config --global --list
+```
 
+```
+$ git config --local --list
+```
+
+```
 $ cat .git/config
 ```
 
-See the changes.
+## Clone a repository
+
+Clone the repository located at <repo> onto the local machine.
+
+```
+$ git clone <repo>
+```
+
+Clone the repository located at <repo> into the folder called <directory> on the local machine.
+
+```
+$ git clone <repo> <directory>
+```
+
+## Saving changes
+
+Stage all changes in <file> for the next commit.
+
+```
+git add <file>
+```
+
+Stage all changes in <directory> for the next commit.
+
+```
+git add <directory>
+```
+
+Stage all changes for the next commit.
+
+```
+$ git add .
+```
+
+## Repo info
+
+View the state of the working directory and the staging area.
 
 ```
 $ git status
 ```
 
-See the differences.
+Show changes between commits, commit and working tree, etc.
 
 ```
 $ git diff
 ```
 
-Add all the changes to be committed.
+List the existing branches.
 
 ```
-$ git add .
+$ git branch
 ```
+
+## Record changes
+
+Apply the staged changes with the command `add` with a description message.
+
+```
+$ git commit -m "first commit"
+```
+
+## Revert changes
 
 Revert changes made to your working copy.
 
@@ -150,25 +202,13 @@ Remove untracked directories (e.g., new or automatically generated directories).
 $ git clean -fd
 ```
 
-Apply the changes added with a description message.
-
-```
-$ git commit -m "first commit"
-```
-
-Send the changes to the remote repository.
+## Send the changes to the remote repository
 
 ```
 $ git push origin master
 ```
 
-List the existing branches.
-
-```
-$ git branch
-```
-
-Switch to a branch.
+## Switch between branches
 
 ```
 $ git checkout master
