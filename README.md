@@ -2,6 +2,19 @@
 
 GIT quick reference.
 
+# Table of Contents
+- [Configuration](#configuration)
+- [Clone a repository](#clone-a-repository)
+- [Saving changes](#saving-changes)
+- [Repository Info](#repository-info)
+- [Log](#log)
+- [Commit Changes](#commit-changes)
+- [Revert Changes](#revert-changes)
+- [Send Changes To Remote](#revert-changes)
+- [Branches](#branches)
+- [Git Simple Workflow](#git-simple-workflow)
+
+<div id='configuration' />
 ## Configuration
 
 #### Console abort command
@@ -108,6 +121,7 @@ $ git config --local --list
 $ cat .git/config
 ```
 
+<div id='clone-a-repository' />
 ## Clone a repository
 
 Clone the repository located at <repo> onto the local machine.
@@ -122,6 +136,7 @@ Clone the repository located at <repo> into the folder called <directory> on the
 $ git clone <repo> <directory>
 ```
 
+<div id='saving-changes' />
 ## Saving changes
 
 Stage all changes in <file> for the next commit.
@@ -142,7 +157,8 @@ Stage all changes for the next commit.
 $ git add .
 ```
 
-## Repo info
+<div id='repository-info' />
+## Repository Info
 
 View the state of the working directory and the staging area.
 
@@ -162,7 +178,76 @@ List the existing branches.
 $ git branch
 ```
 
-## Record changes
+<div id='log' />
+## Log
+
+```
+$ git log
+```
+
+It groups each commit by author and displays the first line of each commit message.
+
+```
+$ git shortlog
+```
+
+Display only the commit ID and the first line of the commit message.
+
+```
+$ git log --oneline
+```
+
+Display all of the references (e.g., branches, tags, etc) that point to each commit.
+
+```
+$ git log --oneline --decorate
+```
+
+Display the log of one commit (the newest first).
+
+```
+$ git log -1
+```
+
+Show the changes for the commits.
+
+```
+$ git log -p -1
+```
+
+Displays the number of insertions and deletions to each file altered by each commit (note that modifying a line is represented as 1 insertion and 1 deletion).
+
+```
+$ git log --stat -1
+```
+
+Drawing an ASCII graph representing the branch structure of the commit history.
+
+```
+git log --graph --oneline
+```
+
+Formatting the log.
+
+```
+$ git log --pretty=format:"%h - %an, %ar : %s"
+```
+
+Log for an author.
+
+```
+$ git log --pretty="%h - %s" --author="User Name"
+```
+
+Log since a date.
+
+```
+$ git log --since=2.weeks
+$ git log --pretty="%h - %s" --since="2016-01-01"
+```
+
+<div id='commit-changes' />
+## Commit Changes
 
 Apply the staged changes with the command `add` with a description message.
 
@@ -170,7 +255,8 @@ Apply the staged changes with the command `add` with a description message.
 $ git commit -m "first commit"
 ```
 
-## Revert changes
+<div id='revert-changes' />
+## Revert Changes
 
 #### Reset
 
@@ -200,18 +286,35 @@ Remove untracked directories (e.g., new or automatically generated directories).
 $ git clean -fd
 ```
 
-## Send the changes to the remote repository
+<div id='send-changes-to-remote' />
+## Send Changes To Remote
 
 ```
 $ git push origin master
 ```
 
-## Switch between branches
+<div id='branches' />
+## Branches
+
+### Create
 
 ```
-$ git checkout master
+$ git branch branch-name
 ```
 
+### Switch to
+
+```
+$ git checkout branch-name
+```
+
+### Create and switch to
+
+```
+$ git checkout -b branch-name
+```
+
+<div id='git-simple-workflow' />
 ## Simple GIT workflow
 
 ```
